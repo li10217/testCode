@@ -1,0 +1,60 @@
+<html>  
+<head>  
+<title>ArrayTable</title>  
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+</head> 
+<style type="text/css">
+    table{
+        border-collapse:collapse;
+        text-align: center;
+    }
+    tr td{
+        border:1px solid #000;
+    }
+    td{
+        width: 100px;
+    }
+    .tdbg{
+        background-color:lightgreen;
+        color: #fff;
+    }
+</style>
+<body> 
+    <table id="tab">
+    </table>
+    <script>
+        var arrObject=[
+            [1,2,33,5],
+            [2,10,15,16],
+            [3,1,21,20]
+        ];
+        var maxNumArr=[];
+        arrObject.map((item)=>{
+            console.log(item.length);
+            item.map((childItem,index)=>{
+                if(maxNumArr.length<4){
+                    maxNumArr[index]=childItem;
+                }else{
+                    if(maxNumArr[index]<childItem){
+                        maxNumArr[index]=childItem;
+                    }
+                }
+            });
+        });
+        console.log(maxNumArr);
+        var tablehtml="";
+        arrObject.map((item)=>{
+            tablehtml+="<tr>";
+            item.map((childItem,index)=>{
+                if(childItem==maxNumArr[index]){
+                    tablehtml+="<td class=\"tdbg\">"+childItem+"</td>";
+                }else{
+                    tablehtml+="<td>"+childItem+"</td>";
+                }
+            });
+            tablehtml+="</tr>";
+        });
+        document.getElementById("tab").innerHTML=tablehtml;
+    </script>
+</body> 
+</html> 
