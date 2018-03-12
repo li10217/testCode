@@ -4,3 +4,6 @@
 
 
 [JquerySelect 点此访问](https://li10217.github.io/testCode/JquerySelect.html)
+
+
+[VueSelect 点此访问](https://li10217.github.io/testCode/vueselect/dist/index.html)
